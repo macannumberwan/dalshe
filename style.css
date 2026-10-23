@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #fff; color: #111;
+  font: 17px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; padding: 24px 16px;
+}
+.card { width: 100%; max-width: 380px; text-align: center; }
+h1 { font-size: 30px; margin: 0 0 6px; }
+.sub { margin: 0 0 28px; color: #666; }
+.btn {
+  display: block; padding: 16px; border-radius: 14px;
+  background: #2aabee; color: #fff; font-weight: 600; text-decoration: none;
+}
+.steps { display: none; margin-top: 28px; text-align: left; }
+.lead { margin: 0 0 14px; font-weight: 600; text-align: center; }
+.step { display: flex; align-items: center; gap: 12px; padding: 12px 14px; margin-bottom: 8px; border-radius: 12px; background: #f2f2f5; }
+.num {
+  flex: none; width: 28px; height: 28px; border-radius: 50%;
+  background: #111; color: #fff; font-weight: 700; font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
+}
+.dots { font-size: 20px; letter-spacing: 1px; }
+.link { margin-top: 18px; border: 0; background: none; color: #2a7fd4; font: inherit; font-size: 15px; padding: 8px; cursor: pointer; }
+.arrow { display: none; position: fixed; top: 6px; right: 10px; width: 84px; height: 84px; color: #e5362e; pointer-events: none; }
+.arrow svg { width: 100%; height: 100%; }
+
+/* Подсказка «⋯ › Открыть в браузере»: iPhone в TikTok сразу, Android — если Telegram не открылся за 2,5 с. */
+body.hint .steps, body.hint .arrow { display: block; }
+/* iPhone в TikTok: кнопка всё равно упадёт с ошибкой — не показываем. */
+body.blocked .btn { display: none; }
+body.blocked .steps { margin-top: 8px; }
